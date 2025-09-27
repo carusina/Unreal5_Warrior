@@ -18,6 +18,11 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
 	TObjectPtr<class UInputAction> InputAction;
+
+	bool IsValid() const
+	{
+		return InputTag.IsValid() && InputAction;
+	}
 };
 
 /**
@@ -29,7 +34,7 @@ class WARRIOR_API UDataAsset_InputConfig : public UDataAsset
 	GENERATED_BODY()
 
 public:
-	UInputAction* FindNatvieInputActionByTag(const FGameplayTag& InInputTag) const;
+	UInputAction* FindNativeInputActionByTag(const FGameplayTag& InInputTag) const;
 	
 public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
@@ -37,4 +42,7 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Meta = (TitleProperty = "InputTag"))
 	TArray<FWarriorInputActionConfig> NativeInputActions;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Meta = (TitleProperty = "InputTag"))
+	TArray<FWarriorInputActionConfig> AbilityInputActions;
 };
