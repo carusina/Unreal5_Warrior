@@ -70,6 +70,8 @@ void AWarriorHeroCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 	checkf(InputConfigDataAsset, TEXT("Forgot to assign a valid data asset as input config"));
 	WarriorInputComponent->BindNativeInputAction(InputConfigDataAsset, WarriorGameplayTags::InputTag_Move, ETriggerEvent::Triggered, this, &AWarriorHeroCharacter::Input_Move);
 	WarriorInputComponent->BindNativeInputAction(InputConfigDataAsset, WarriorGameplayTags::InputTag_Look, ETriggerEvent::Triggered, this, &AWarriorHeroCharacter::Input_Look);
+
+	WarriorInputComponent->BindAbilityInputAction(InputConfigDataAsset, this, &AWarriorHeroCharacter::Input_AbilityInputPressed, &AWarriorHeroCharacter::Input_AbilityInputReleased);
 }
 
 void AWarriorHeroCharacter::BeginPlay()
@@ -110,4 +112,14 @@ void AWarriorHeroCharacter::Input_Look(const struct FInputActionValue& InputActi
 	{
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void AWarriorHeroCharacter::Input_AbilityInputPressed(FGameplayTag InInputTag)
+{
+	WarriorAbilitySystemComponent->OnAbilityInputPressed(InInputTag);
+}
+
+void AWarriorHeroCharacter::Input_AbilityInputReleased(FGameplayTag InInputTag)
+{
+	WarriorAbilitySystemComponent->OnAbilityInputReleased(InInputTag);
 }
