@@ -13,5 +13,8 @@ UCLASS()
 class WARRIOR_API UHeroCombatComponent : public UPawnCombatComponent
 {
 	GENERATED_BODY()
-	
+
+public:
+	UFUNCTION(BlueprintCallable, Category = "Warrior|Combat")
+	class AWarriorHeroWeapon* GetHeroCarriedWeaponByTag(FGameplayTag InWeaponTag) const;
 };
