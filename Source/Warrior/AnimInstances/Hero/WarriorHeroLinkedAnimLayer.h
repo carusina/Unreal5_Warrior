@@ -13,5 +13,8 @@ UCLASS()
 class WARRIOR_API UWarriorHeroLinkedAnimLayer : public UWarriorBaseAnimInstance
 {
 	GENERATED_BODY()
-	
+
+public:
+	UFUNCTION(BlueprintPure, Meta = (BlueprintThreadSafe))
+	class UWarriorHeroAnimInstance* GetHeroAnimInstance() const;
 };
