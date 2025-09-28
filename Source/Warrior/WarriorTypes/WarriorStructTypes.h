@@ -14,7 +14,7 @@ struct FWarriorHeroAbilitySet
 	FGameplayTag InputTag;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
-	TSubclassOf<class UWarriorGameplayAbility> AbilityToGrant;
+	TSubclassOf<class UWarriorHeroGameplayAbility> AbilityToGrant;
 
 	bool IsValid() const;
 };
