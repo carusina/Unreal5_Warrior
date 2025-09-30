@@ -25,4 +25,6 @@ public:
 	virtual class UPawnUIComponent* GetPawnUIComponent() const = 0;
 	
 	virtual class UHeroUIComponent* GetHeroUIComponent() const;
+
+	virtual class UEnemyUIComponent* GetEnemyUIComponent() const;
 };

@@ -19,4 +19,10 @@ protected:
 
 	UFUNCTION(BlueprintImplementableEvent, Meta = (DisplayName = "On Owning Hero UI Component Initialized"))
 	void BP_OnOwningHeroUIComponentInitialized(class UHeroUIComponent* OwningHeroUIComponent);
+
+	UFUNCTION(BlueprintImplementableEvent, Meta = (DisplayName = "On Owning Enemy UI Component Initialized"))
+	void BP_OnOwningEnemyUIComponentInitialized(class UEnemyUIComponent* OwningEnemyUIComponent);
+public:
+	UFUNCTION(BlueprintCallable)
+	void InitEnemyCreatedWidget(AActor* OwningEnemyActor);
 };
