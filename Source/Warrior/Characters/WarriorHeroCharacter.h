@@ -22,6 +22,10 @@ public:
 	//~ Begin IPawnCombatInterface Interface.
 	virtual class UPawnCombatComponent* GetPawnCombatComponent() const override;
 	//~ End IPawnCombatInterface Interface
+
+	//~ Begin IPawnUIInterface Interface.
+	virtual class UPawnUIComponent* GetPawnUIComponent() const override;
+	//~ End IPawnUIInterface Interface
 	
 protected:
 	//~ Begin APawn Interface.
@@ -42,6 +46,9 @@ private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Combat", Meta = (AllowPrivateAccess = "true"))
 	TObjectPtr<class UHeroCombatComponent> HeroCombatComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "UI", Meta = (AllowPrivateAccess = "true"))
+	TObjectPtr<class UHeroUIComponent> HeroUIComponent;
 	
 #pragma endregion
 
