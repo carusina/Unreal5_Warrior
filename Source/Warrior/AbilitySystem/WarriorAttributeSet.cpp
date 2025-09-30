@@ -71,7 +71,7 @@ void UWarriorAttributeSet::PostGameplayEffectExecute(const struct FGameplayEffec
 		
 		PawnUIComponent->OnCurrentHealthChanged.Broadcast(GetCurrentHealth() / GetMaxHealth());
 		
-		if (NewCurrentHealth == 0.0f)
+		if (GetCurrentHealth() == 0.0f)
 		{
 			UWarriorFunctionLibrary::AddGameplayTagToActorIfNone(Data.Target.GetAvatarActor(), WarriorGameplayTags::Shared_Status_Dead);
 		}
