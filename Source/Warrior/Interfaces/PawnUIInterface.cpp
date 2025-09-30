@@ -4,3 +4,7 @@
 #include "Interfaces/PawnUIInterface.h"
 
 // Add default functionality here for any IPawnUIyInterface functions that are not pure virtual.
+class UHeroUIComponent* IPawnUIInterface::GetHeroUIComponent() const
+{
+	return nullptr;
+}

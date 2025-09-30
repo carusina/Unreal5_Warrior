@@ -55,6 +55,11 @@ class UPawnUIComponent* AWarriorHeroCharacter::GetPawnUIComponent() const
 	return HeroUIComponent;
 }
 
+class UHeroUIComponent* AWarriorHeroCharacter::GetHeroUIComponent() const
+{
+	return HeroUIComponent;
+}
+
 void AWarriorHeroCharacter::PossessedBy(AController* NewController)
 {
 	Super::PossessedBy(NewController);

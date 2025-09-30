@@ -53,4 +53,7 @@ public:
 	UPROPERTY(BlueprintReadOnly, Category = "Damage")
 	FGameplayAttributeData DamageTaken;
 	ATTRIBUTE_ACCESSORS(UWarriorAttributeSet, DamageTaken)
+
+private:
+	TWeakInterfacePtr<class IPawnUIInterface> CachedPawnUIInterface;
 };

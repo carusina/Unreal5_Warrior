@@ -25,6 +25,7 @@ public:
 
 	//~ Begin IPawnUIInterface Interface.
 	virtual class UPawnUIComponent* GetPawnUIComponent() const override;
+	virtual class UHeroUIComponent* GetHeroUIComponent() const override;
 	//~ End IPawnUIInterface Interface
 	
 protected:
